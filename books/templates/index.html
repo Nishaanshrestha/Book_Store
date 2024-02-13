@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Book store{% endblock title %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Book Store</h1>
+            <p class="lead">Welcome to our book store. We have the best books available for you. You can search for a book, view details and purchase it. </p>
+        </div>
+    </div>
+    <ul>
+       {% for book in books %}
+       <li><a href="{% url "book_detail" book.slug %}">{{book.title}}</a></li>
+       {% endfor %}
+        
+     
+    </ul>
+{% endblock content %}
